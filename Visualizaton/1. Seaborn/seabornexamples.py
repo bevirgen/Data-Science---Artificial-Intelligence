@@ -19,7 +19,7 @@ PercentagePeopleBelowPovertyLevel = pd.read_csv("PercentagePeopleBelowPovertyLev
 PercentOver25CompletedHighSchool = pd.read_csv("PercentOver25CompletedHighSchool.csv",encoding="cp1252")
 PoliceKillingsUS = pd.read_csv("PoliceKillingsUS.csv",encoding="cp1252")
 ShareRaceByCity = pd.read_csv("ShareRaceByCity.csv",encoding="cp1252")
-# %% poverty rate of each state - eyaletlerdeki fakirlik oranı
+# %% Poverty rate of each state - eyaletlerdeki fakirlik oranı
 
 PercentagePeopleBelowPovertyLevel.head()
 # looking for missing values
@@ -151,13 +151,10 @@ ax.set(xlabel = 'Percentage of Races', ylabel='States', title = "Percentage of S
 # %% High school graduation rate vs poverty rate of each state
 
 # normalization
-
-
 sorted_data['area_poverty_ratio'] = sorted_data['area_poverty_ratio'] / max(sorted_data['area_poverty_ratio'])
 sorted_data2['area_hs_grad_ratio'] = sorted_data2['area_hs_grad_ratio'] / max(sorted_data2['area_hs_grad_ratio'])
 data=pd.concat([sorted_data,sorted_data2['area_hs_grad_ratio']],axis=1)
 data.sort_values('area_poverty_ratio', inplace=True)
-
 
 # visualization
 f, ax1 = plt.subplots(figsize=(17,7))
@@ -170,6 +167,57 @@ plt.xlabel('States',fontsize = 15,color='blue')
 plt.ylabel('Values',fontsize = 15,color='blue')
 plt.title('High School Graduate  VS  Poverty Rate',fontsize = 20,color='blue')
 plt.grid()
+# %% High school graduation rate vs poverty rate of each state with different plot
+
+# joint kernel density
+# pearsonr > how much the closer to 1 , positive correlation between datas, how much the closer to -1, it's negative corr. if == 0 , no corr.
+sns.jointplot(data.area_poverty_ratio, data.area_hs_grad_ratio, kind='kde', shade=True, size = 7, cut = 4) # shade > density , cut > data density size
+plt.show()
+
+# with different usage , we can use > kind'' “scatter” | “reg” | “resid” | “kde” | “hex”, default = scatter
+sns.jointplot('area_poverty_ratio', 'area_hs_grad_ratio', data=data, color='r')
+plt.show()
+# %% # %% High school graduation rate vs poverty rate of each state with different plot
+
+# results of a linear regressian within each dataset
+sns.lmplot('area_poverty_ratio', 'area_hs_grad_ratio', data=data, size = 7)
+plt.xlabel('Poverty Ratio',fontsize = 15,color='blue')
+plt.ylabel('HS Graduate Ratio',fontsize = 15,color='blue')
+plt.show()
+# %%# %% # %% High school graduation rate vs poverty rate of each state with different plot
+
+# show each distribution with both violins and points
+# using cubehelix to get a custom sequential palette
+
+pal = sns.cubehelix_palette(2, rot=.5, dark=.3)
+sns.violinplot(data=data, palette=pal, inner='points', size=5)
+plt.show()
+# %% Race rates according in dataframe
+
+PoliceKillingsUS.race.dropna(inplace=True) # drop nan values
+PoliceKillingsUS.race.value_counts()
+labels = PoliceKillingsUS.race.value_counts().index
+colors = ['gray','brown','red','yellow','green','brown']
+explode = [0,0,0,0,0,0]
+sizes = PoliceKillingsUS.race.value_counts().values
+
+# visualization 
+plt.figure(figsize=(7,7))
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%')
+plt.title('Killed People According to Races', color = 'blue', fontsize = 15)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
