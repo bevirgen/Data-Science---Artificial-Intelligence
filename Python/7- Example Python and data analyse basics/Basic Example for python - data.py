@@ -221,7 +221,6 @@ dir(builtins)
 
 # In[131]:
 
-
 # We should just some look nested Func (func inside func)
 def square():
     def add():
@@ -230,10 +229,7 @@ def square():
         return z
     return add()**2
 print(square())
-
-
 # In[134]:
-
 
 # DEFAULT and FLEXIBLE ARGUMENTS
 def f(a,b=1,c=2):
