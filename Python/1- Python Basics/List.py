@@ -181,6 +181,7 @@ min_value = 10000000
 for each in listem:
     if(each < min_value):
         min_value = each
+        print(each)
     else:
         continue
 

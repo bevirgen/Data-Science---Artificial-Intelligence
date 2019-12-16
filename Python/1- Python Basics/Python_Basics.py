@@ -59,12 +59,12 @@ def test1(): #her fonksiyon return gerektirmez
     print("this is my second test")
 # %% defauld and flexible functions
 
-    #default function
+#default function
 def calc_perimeter_of_circle(r,pi=3.14): #pi default 3.14 verildi
     return 2*pi*r
 calc_perimeter_of_circle(4)
 
-    #flexible function
+#flexible function
 def calculate(height,kilo,*args):
     return (height+kilo) + args[0] #isteğe bağlı eklenilen verinin ilk değeri
 calculate(180,90,88,4)
