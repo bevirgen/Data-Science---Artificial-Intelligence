@@ -24,10 +24,9 @@ df.corr() > 0.5 # correlationship about datas
 
 # In[16]:
 
-
 #correlation map
-f, ax = plt.subplots(figsize=(13,11))
-sns.heatmap(df.corr(), annot=True, linewidths = .5, fmt = '.1f', ax=ax)
+f, ax = plt.subplots(figsize=(10,10))
+sns.heatmap(df1.corr(), annot=True, linewidths = .5, fmt = '.1f', ax=ax)
 plt.show()
 
 

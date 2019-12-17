@@ -154,7 +154,7 @@ data=pd.concat([sorted_data,sorted_data2['area_hs_grad_ratio']],axis=1)
 data.sort_values('area_poverty_ratio', inplace=True)
 
 # visualization
-f, ax1 = plt.subplots(figsize=(17,7))
+f, ax1 = plt.subplots(figsize=(10,5))
 sns.pointplot('area_list', 'area_poverty_ratio', data=data, color='lime', alpha = 0.8)
 sns.pointplot('area_list', 'area_hs_grad_ratio', data=data, color='red', alpha = 0.8)
 plt.text(35,0.4,'high school graduate ratio',color='red',fontsize = 17,style = 'italic')
@@ -169,7 +169,7 @@ plt.grid()
 # pearsonr > how much the closer to 1 , positive correlation between datas, how much the closer to -1, it's negative corr. if == 0 , no corr.
 sns.jointplot(data.area_poverty_ratio, data.area_hs_grad_ratio, kind='kde', shade=True, size = 7, cut = 4) # shade > density , cut > data density size
 plt.show()
-
+#%%
 # with different usage , we can use > kind'' “scatter” | “reg” | “resid” | “kde” | “hex”, default = scatter
 sns.jointplot('area_poverty_ratio', 'area_hs_grad_ratio', data=data, color='r')
 plt.show()
@@ -247,7 +247,11 @@ plt.ylabel('Number of Killed People')
 plt.title('Age of Killed People',color='blue', fontsize=15)
 # %% Race of Killed People
 
-sns.countplot(x='race', data=PoliceKillingsUS)
+race = PoliceKillingsUS.race.value_counts()
+race.sort_values(ascending=True, inplace=True)
+
+plt.figure(figsize=(11,7))
+sns.barplot(race.index, race.values)
 plt.title('Race of Killed People',color='blue', fontsize=15)
 # %% Most Dangereous Cities
 
@@ -256,17 +260,12 @@ plt.figure(figsize=(11,7))
 sns.barplot(city[:12].index, city[:12].values)
 plt.xticks(rotation = 45)
 plt.title('Most Dangereous Cities', color='blue', fontsize=15)
-# %% Most Dangereous States
 
-state = PoliceKillingsUS.state.value_counts()
-plt.figure(figsize=(11,7))
-sns.barplot(state[:20].index, state[:20].values)
-plt.title('Most Dangereous States', color='blue', fontsize=15)
 # %% Kill Numbers From States in Kill Data
 
-sta = PoliceKillingsUS.state.value_counts().index[:10]
+sta = PoliceKillingsUS.state.value_counts()[:10]
 plt.figure(figsize=(11,7))
-sns.barplot(sta, PoliceKillingsUS.state.value_counts().values[:10])
-plt.title('Kill Numbers From States', color='blue', fontsize=15)
+sns.barplot(sta.index, sta.values)
+plt.title('Kill Numbers From States(Most Dangerous States)', color='blue', fontsize=15)
 
 

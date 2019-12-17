@@ -28,8 +28,8 @@ zeros = np.zeros((3,4)) # 0'lardan olusan 3 * 4 luk matris yarat, locate et (yer
 # eğer veri buyukse append komutu bellegi yorar , if data is big , append command is frazzle memory
 # bunun icin yeri ayirdiktan sonra daha sonra matriste guncelleme yapabiliriz
 
-zeros[1,0] = 5 # 1.sutun , 0.satir = 5
-zeros[0,3] = 7 # 0.sutun, 3.satir = 7
+zeros[1,0] = 5 # 1.satir , 0.sutun = 5
+zeros[0,3] = 7 # 0.satir, 3.sutun = 7
 zeros
 
 ones = np.ones((3,4)) # 1,lerden olusan 3 * 4 matris olusturuldu
@@ -101,7 +101,7 @@ print(array1[0:2]) # 0 ve 1.boyutları bastır
 
 print(array1[2,3]) # 2.index satır 3.index kolon veri
 
-print(array1[:,1]) # tüm kolonları al 1.satırdaki verileri yaz
+print(array1[:,1]) # tüm satırları al 1.kolondaki verileri yaz
 
 print(array1[1:3,1:3]) # 1 : 3 satır (3 is not included) , 1 : 3 kolon verilerini bastır
 
@@ -142,7 +142,7 @@ a = np.vstack((array1,array2))
 b = np.hstack((array1,array2))
 # %% convert and copy array
 
-liste = [1,2,3,4] 
+liste = [1,2,3,4]
 array = np.array(liste) # list to array
 liste2 = list(array)
 

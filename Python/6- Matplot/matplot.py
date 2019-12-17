@@ -42,8 +42,9 @@ plt.xlabel("Id") # rowline label (x)
 plt.ylabel("PetalLengthCm") # columnline label (y)
 plt.legend() # show titles (labels)
 plt.show()
+# %%
 
-df1.plot(grid = True, linestyle = ':' , alpha = 0.1) # sayfa karelerini göster, çizgi şekli : , saydamlık : çok saydam
+df1.plot(grid = True, linestyle = ':') # sayfa karelerini göster, çizgi şekli : , saydamlık : çok saydam
 plt.show()
 # %% scatter plot
 
@@ -59,7 +60,7 @@ plt.show()
 # işlemler : önce hepsini sepallength ve petalwidh (x,y) ye göre plot ettik ve renk verdik, ardından tablo işlemlerini yapıp görüntüledik
 # %% histogram
 
-plt.hist(setosa.PetalLengthCm, bins = 50) # hist table, bins > çubuklar, setosa verisi ile denk olursa tam değerlere ulaşılacaktır
+plt.hist(setosa.PetalLengthCm, bins = 18) # hist table, bins > çubuklar, setosa verisi ile denk olursa tam değerlere ulaşılacaktır
 plt.xlabel("PetalLengthCm Values")
 plt.ylabel("Frequency - Count")
 plt.title("Histogram")
@@ -77,9 +78,6 @@ plt.ylabel("Per Capita Income")
 plt.show()
 # %% subplot
 
-df1.plot(grid=True, alpha=0.9, subplots = True)
-plt.show()
-
 setosa = df[df.Species == "Iris-setosa" ]
 versicolor = df[df.Species == "Iris-versicolor" ]
 virginica = df[df.Species == "Iris-virginica" ]
@@ -91,9 +89,7 @@ plt.ylabel("Setosa - PetalLengthCm")
 plt.subplot(2,1,2)#(2 satır , 2 sütun luk matrisin ilk verisi)
 plt.plot(versicolor.Id, versicolor.PetalLengthCm, color = "green", label = "Versicolor")
 plt.ylabel("Versicolor - PetalLengthCm")
-
 plt.show()
-
 
 
 
