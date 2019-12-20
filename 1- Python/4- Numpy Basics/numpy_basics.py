@@ -38,7 +38,7 @@ ones
 empty = np.empty((3,2)) # create 3 *2 null matris
 empty
 
-arange = np.arange(10,51,5) # 10'dan baslayip 50'ye kadar sayiları 5er 5er say
+arange = np.arange(10,51,5) # 10'dan baslayip 50'ye kadar sayiları 5er 5er yaz
 arange
 
 arng= np.arange(1,17,2) # 1 intend 17 extend, 1-17 arası 2 şer artan sayıları yaz
