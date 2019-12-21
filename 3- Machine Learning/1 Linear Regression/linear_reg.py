@@ -17,7 +17,7 @@ plt.xlabel('deneyim')
 plt.ylabel('maas')
 plt.show()
 # %% 
-
+# linear regression > y = b0 + b1*x
 lin_reg = LinearRegression()
 
 x = df.deneyim.values.reshape(-1,1)

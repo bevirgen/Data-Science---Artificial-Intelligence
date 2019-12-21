@@ -13,7 +13,7 @@ import numpy as np
 df = pd.read_csv("data.csv",sep = ';')
 
 # %% 
-
+# multiple linear regression > y = b0 + b1*x1 + b2*x2 + ... bn*xn
 x = df.iloc[:,[0,2]].values
 y = df.maas.values.reshape(-1,1)
 
