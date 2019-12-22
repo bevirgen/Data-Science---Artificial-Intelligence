@@ -31,7 +31,11 @@ plt.show()
 # %%
 # polynomial linear regression> y = b0 + b1*x + b2 * x^2 +..+ bn * x^n
 
-x_poly = PolynomialFeatures(degree = 4).fit_transform(x)
+poly = PolynomialFeatures(degree = 4)
+x_poly = poly.fit_transform(x)
+
+t = poly.fit_transform([[1000]]) # predict for example
+lr2.predict(t)
 
 lr2 = LinearRegression()
 lr2.fit(x_poly, y)
