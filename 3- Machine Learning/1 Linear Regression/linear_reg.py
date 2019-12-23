@@ -8,6 +8,7 @@ Created on Thu Dec 19 10:04:56 2019
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression # library for ML
 
 df = pd.read_csv("data.csv",sep = ';')
@@ -43,3 +44,5 @@ array = np.arange(1,51,1).reshape(-1,1)
 plt.scatter(array, lin_reg.predict(array), color='orange')
 plt.plot(array,lin_reg.predict(array), color='blue')
 plt.show()
+
+print('r2_square_score',r2_score(y,lin_reg.predict(array)))
