@@ -43,6 +43,8 @@ array = np.arange(1,51,1).reshape(-1,1)
 
 plt.scatter(array, lin_reg.predict(array), color='orange')
 plt.plot(array,lin_reg.predict(array), color='blue')
+plt.xlabel('Experience')
+plt.ylabel('Salary')
 plt.show()
 
 print('r2_square_score',r2_score(y,lin_reg.predict(array)))
