@@ -25,8 +25,6 @@ print("b0 : ",ml_lin_reg.intercept_)
 print('b1, b2 : ',ml_lin_reg.coef_)
 ml_lin_reg.predict([[10,35],[5,35]])
 
-array = np.arange(1,51,1).reshape(-1,1)
-
 plt.scatter(df.deneyim, y,color = 'orange')
 plt.scatter(df.yas, y,color = 'blue')
 plt.plot(x,ml_lin_reg.predict(x))
