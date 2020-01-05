@@ -68,7 +68,6 @@ plt.show()
 y = data.label.values
 x_data = data.drop(['label'], axis=1)
 x = (x_data - np.min(x_data)) / (np.max(x_data)-np.min(x_data)).values
-print(data.info())
 # %%
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size= 0.2, random_state=42)
 
