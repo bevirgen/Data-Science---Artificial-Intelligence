@@ -6,9 +6,12 @@ Created on Sat Jan 11 23:56:57 2020
 """
 
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.datasets import load_iris
 import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
 
 iris = load_iris()
 
@@ -32,6 +35,21 @@ grid = {'n_neighbors':np.arange(1,50)}
 knn = KNeighborsClassifier()
 knn_cv = GridSearchCV(knn,grid, cv=10)
 knn_cv.fit(x,y)
-# %% finding tune hyperparameter
+#  finding tuned hyperparameter and best score
 print('tuned Hyp K:',knn_cv.best_params_)
 print('best acc for tuned parameter',knn_cv.best_score_)
+# %% Grid Search CV with logistic regression
+x = x[:100,:]
+y = y[:100]
+# if c > it's Overfit, if c < it's underfit
+grid = {'C':np.logspace(-3,3,7),'penalty':['l1','l2']} # C = log regression regularization parameter
+lr = LogisticRegression()
+lr_cv = GridSearchCV(lr,grid, cv=10)
+lr_cv.fit(x_train, y_train)
+#  finding tuned hyperparameter and best score
+print('tuned Hyperparameter:',lr_cv.best_params_)
+print('best acc for tuned parameter',lr_cv.best_score_)
+# %%
+lr2 = LogisticRegression(C=1)
+lr2.fit(x_train, y_train)
+print('score',lr2.score(x_test,y_test))
