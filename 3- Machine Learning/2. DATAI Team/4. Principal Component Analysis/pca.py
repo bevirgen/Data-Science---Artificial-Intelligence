@@ -13,13 +13,13 @@ import pandas as pd
 #data prepare
 iris = load_iris()
 
-data = iris.data
+x = iris.data
 feature_names = iris.feature_names
 y = iris.target
-df = pd.DataFrame(data, columns=feature_names)
+df = pd.DataFrame(x, columns=feature_names)
 df['species'] = y
 # %% principal component analysis
-x = data
+
 pca = PCA(n_components=2, whiten=True) #whiten = normalization
 x_pca = pca.fit_transform(x)
 
