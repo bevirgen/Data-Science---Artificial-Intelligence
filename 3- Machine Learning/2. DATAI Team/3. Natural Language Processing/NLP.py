@@ -49,7 +49,7 @@ data = pd.concat([df.description, data.gender], axis=1)
 data.dropna(axis=0, inplace=True)
 """
 # %%
-max_features = 500 #the most used 50 word
+max_features = 50 #the most used 50 word
 count_vectorizer = CountVectorizer(max_features=max_features,stop_words='english')
 sparce_matrix = count_vectorizer.fit_transform(description_list).toarray()
 print('The most used 50 word :',count_vectorizer.get_feature_names())

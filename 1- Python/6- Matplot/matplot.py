@@ -43,7 +43,6 @@ plt.ylabel("PetalLengthCm") # columnline label (y)
 plt.legend() # show titles (labels)
 plt.show()
 # %%
-
 df1.plot(grid = True, linestyle = ':') # sayfa karelerini göster, çizgi şekli : , saydamlık : çok saydam
 plt.show()
 # %% scatter plot
