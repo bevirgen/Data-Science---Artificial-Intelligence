@@ -7,6 +7,7 @@ Created on Sat Jan 11 23:56:57 2020
 
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.datasets import load_iris
 import numpy as np
