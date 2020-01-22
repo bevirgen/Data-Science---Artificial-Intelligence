@@ -85,12 +85,42 @@ dict_in_dict['reg']['RMSE']
 dctnry['gbm'] = 'gradient boosting machines'
 
 liste = [1,2,3]
-dctnry[liste] = 'one','two','three' # there will be an error
+# dctnry[liste] = 'one','two','three' # there will be an error
 
+# set
 
+l = [1,'a','b',2]
+s = set(l)
 
+t = ('a','ali')
+s = set(t)
+# s[0] , there will be an error
+veli = 'veli is looking to the space'
+s = set(veli) # this is important, every character just one time in set
+joe = ['stop', 'looking', 'to', 'the', 'space', 'please', 'Joe','please']
+s = set(joe) # there is just one please in s
+s.add('hot water')
+s.remove('hot water')
 
+set1=set([1,3,4,5])
+set2=set([2,3,5,8])
 
+print(set1.difference(set2)) # set 1 - set 2
+print(set2.difference(set1)) # set 2 - set1
+print(set1.symmetric_difference(set2)) # (set 1 - set 2) + (set 1 - set 2)
+
+set1-set2
+
+set1.intersection(set2) # SET1 n SET2
+set1 & set2 # same thing above line
+set1.union(set2) # set1,set2 unique combine
+set1.intersection_update(set2) # apply and change set1 according to intersections
+
+set3=set([10,11,12])
+set4=set([10,11,12,13,14,454])
+set3.isdisjoint(set4) # is SET3 n SET4 empty? >> False
+set3.issubset(set4) # is SET3 c SET4 ? >> True
+set4.issuperset(set3) # is SET4 superset SET3 ? >> True
 
 
 
