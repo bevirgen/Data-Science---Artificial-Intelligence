@@ -41,3 +41,60 @@ strlist = ['ali','veli','abdulmut','joe','cole','berkay','su']
 strlist[2] = 'velinin babasi'
 strlist[2:6] = 'velinin babasi',"joe's father",'his father',"berkayin babasi"
 strlist += ['new father']
+
+# methods
+strlist.append('who is the father') # add
+strlist.remove('who is the father') # remove
+strlist.insert(1,'who is the father') # adding component according to index what we say
+strlist.insert(len(strlist), 'I am the father')
+strlist.pop(1) # deleting component according to index what we say
+strlist.pop(-1)
+strlist.extend(['father try']) # concatenate list
+strlist.sort()
+
+# dictionaries
+
+dctnry = {
+    'reg':'regression model',
+    'log':'logistic regression',
+    'cart':'classification and regression trees'
+    }
+
+dictionary = {
+    'reg':['RMSE',10],
+    'log':['MSE',11],
+    'cart':['SSE',12]
+    }
+
+dctnry['reg']
+
+dict_in_dict = {
+    'reg':{'RMSE':101,
+           'MSE':111,
+           'SSE':121},
+    'log':{'RMSE':102,
+           'MSE':112,
+           'SSE':122},
+    'cart':{'RMSE':103,
+           'MSE':113,
+           'SSE':123},
+    }
+
+dict_in_dict['reg']['RMSE']
+
+dctnry['gbm'] = 'gradient boosting machines'
+
+liste = [1,2,3]
+dctnry[liste] = 'one','two','three' # there will be an error
+
+
+
+
+
+
+
+
+
+
+
+
