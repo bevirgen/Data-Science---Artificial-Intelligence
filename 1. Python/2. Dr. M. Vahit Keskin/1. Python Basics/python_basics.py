@@ -31,6 +31,7 @@ listed = list(ali)
 connected_list = [list_,list_2,listed]
 
 # indexing and slicing
+
 ali[0:1]
 ali[4:]
 ali[-1:]
@@ -43,6 +44,7 @@ strlist[2:6] = 'velinin babasi',"joe's father",'his father',"berkayin babasi"
 strlist += ['new father']
 
 # methods
+
 strlist.append('who is the father') # add
 strlist.remove('who is the father') # remove
 strlist.insert(1,'who is the father') # adding component according to index what we say
@@ -122,7 +124,69 @@ set3.isdisjoint(set4) # is SET3 n SET4 empty? >> False
 set3.issubset(set4) # is SET3 c SET4 ? >> True
 set4.issuperset(set3) # is SET4 superset SET3 ? >> True
 
+# functions
 
+def square(x,y):
+    if y != 0:
+        # return int((x*y) / (x/y))
+        print('Operation of the number you entered:',int((x*y) / (x/y)))
+    else:
+        print('Operation failed because y is can not be equal 0')
+
+square(3,0)
+
+# if-else (conditional) statements
+
+limit = 5000
+income = 1111
+
+if income > limit:
+    print('You are not relevant for cash support! ')
+elif income <= 1000:
+    print('You are relevant to A type support')
+elif income > 1000:
+    print('You are relevant to B type support')
+
+# for loop
+
+salaries = [1000,2000,3000,4000,5000,6500,8000]
+
+# =============================================================================
+# def new_salaries(x):
+#     if x < 3000:
+#         x = x * 1.25
+#     else:
+#         x = x * 1.1
+#     print(int(x))
+# =============================================================================
+
+for each in salaries:
+    if each < 4000:
+        each = each * 1.25
+    else:
+        each = each * 1.1
+    print(int(each))
+    
+# break continue
+    
+mean_sales = [100,55,68,22,77,105,200]
+
+for each in mean_sales:
+    if each < 30:
+        print('Sales is very few, check the problems, sales =',each)
+        break # break loop
+    print(each)
+
+for each in mean_sales:
+    if each == 22:
+        continue # jumped 22
+    print(each)
+    
+number = 0
+
+while number < 10:
+    number += 0.5
+    print(number)
 
 
 
