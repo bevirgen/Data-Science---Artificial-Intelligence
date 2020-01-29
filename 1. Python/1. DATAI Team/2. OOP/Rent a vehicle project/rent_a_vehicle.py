@@ -115,11 +115,95 @@ class BikeRent(RentVehicle):
 # customer
 class Customer():
     
-    def __init__():
-        pass
+    def __init__(self):
+        self.bikes = 0
+        self.rentalBasis_b = 0
+        self.rentalTime_b = 0
+        
+        self.cars = 0
+        self.rentalBasis_c = 0
+        self.rentalTime_c = 0
     
-    def requestVehicle():
-        pass
+    def requestVehicle(self, brand):
+        if brand == 'bike':
+            bikes = int(input('How many bikes would you like to rent?'))
+            
+            try:
+                bikes = int(bikes)
+                
+            except ValueError:
+                print('Entry should be number')
+                return -1
+            
+            if bikes < 1:
+                print('Number of bikes should be greater than zero.')
+                return -1
+            else:
+                self.bikes = bikes
+            
+            return self.bikes
+                
+        elif brand == 'car':
+            cars = int(input('How many cars would you like to rent?'))
+            
+            try:
+                cars = int(cars)
+                
+            except ValueError:
+                print('Entry should be number')
+                return -1
+            
+            if cars < 1:
+                print('Number of cars should be greater than zero.')
+                return -1
+            else:
+                self.cars = cars
+            
+            return self.cars
+            
+        else:
+            print('Request vehicle error')
     
-    def returnVehicle():
-        pass
+    def returnVehicle(self, brand):
+        
+        if brand == 'bike':
+            if self.rentalTime_b and self.rentalBasis_b and self.bikes:
+                return self.rentalTime_b, self.rentalBasis_b, self.bikes
+            else:
+                return 0,0,0
+                
+        elif brand == 'car':
+            if self.rentalTime_c and self.rentalBasis_c and self.cars:
+                return self.rentalTime_c, self.rentalBasis_c, self.cars
+            else:
+                return 0,0,0
+            
+        else:
+            print('Request vehicle error')
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
