@@ -135,6 +135,22 @@ def square(x,y):
 
 square(3,0)
 
+    # lambda function
+new_multiply = lambda a,b : a*b
+new_multiply(2,4)
+unordered_list = [('b',3),('a',8),('d',12),('c',1)]
+sorted(unordered_list, key = lambda x : x[1])
+    # map & filter & reduce
+v = [1,2,3,4,5]
+map(lambda x: x+10, v) # mapping
+list(map(lambda x: x+10, v)) # output
+
+v = [1,2,3,4,5,6,7,8,9,10]
+list(filter(lambda x: x % 2 == 0, v)) # filter
+
+from functools import reduce
+reduce(lambda x,y : x+y, v) # reduce
+
 # if-else (conditional) statements
 
 limit = 5000
