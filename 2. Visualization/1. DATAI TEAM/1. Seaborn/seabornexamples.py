@@ -37,7 +37,7 @@ area_poverty_ratio = []
 # average poverty rate for each states
 for i in area_list:
     x = PercentagePeopleBelowPovertyLevel[PercentagePeopleBelowPovertyLevel['Geographic Area'] == i]
-    area_poverty_rate = sum(x.poverty_rate)/len(x)
+    area_poverty_rate = np.mean(x.poverty_rate)
     area_poverty_ratio.append(area_poverty_rate)
 
 # do dataframe and sort it
@@ -204,7 +204,7 @@ plt.show()
 PoliceKillingsUS.race.dropna(inplace=True) # drop nan values
 PoliceKillingsUS.race.value_counts()
 labels = PoliceKillingsUS.race.value_counts().index
-colors = ['gray','brown','red','yellow','green','brown']
+colors = ['gray','brown','red','yellow','green','purple']
 explode = [0,0,0,0,0,0]
 sizes = PoliceKillingsUS.race.value_counts().values
 
